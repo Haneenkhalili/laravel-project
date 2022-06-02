@@ -4,70 +4,97 @@ namespace Tests\Browser;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
+use Tests\Browser\Pages\Login;
 use Tests\DuskTestCase;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Models\User;
+use Laravel\Dusk\Page;
 
 
 class LoginTest extends DuskTestCase
 {
+//    use DatabaseMigrations;
     /**
      * A Dusk test example.
-     *@test
+     * @test
      * @return void
      *
+     * @throws \Throwable
      */
-    // public function userRegister()
-    // {
-    //     $user = (User::class);
-    //     $this->browse(function (Browser $browser) use($user) {
-    //         $browser->visit('register')
-    //                 ->assertSee('Register')
-    //                 ->type('name','haneen')
-    //                 ->type('email','haneen@gmail.com')
-    //                 ->type('password','secret')
-    //                 ->type('password_confirmation','secret')
-    //                 ->press('Register')
-    //                 ->assertSee('You are Register succesfuly!');  //check if 'You are logged In!' text is there on the page.
-    //                 ;
-
-    //     });
-
-
-    // }
-
-
-    // public function emptyNameField ()
-    // {
-    //     $user = factory(User::class);
-    //     $this->browse(function (Browser $browser)use($user){
-    //         $browser->visit('register')
-    //                 ->assertInputMissing('name',$user->name);
 
 
 
-    //     });
-    // }
+//    public function successLogin()
+//    {
+//        $this->browse(function (Browser $browser){
+//            $browser->visit(new  login)
+//                    ->assertSee('Login')
+//                     ->type('@email','haneen.alkhalili-96@hotmail.com')
+//                     ->type('@password','12345678')
+//                    ->click('@button')
+//                    ->assertSee('You are logged in!')
+//
+//
+//            ;
+//    });
+//}
+//         public function inputEmailFiledIsEmpty(){
+//             $this->browse(function (Browser $browser){
+//                 $browser->visit(new  login)
+//                     ->assertSee('Login')
+//                     ->type('@password','12345678')
+//                     ->click('@button')
+//                     ->assertSee('You are logged in!')
+//
+//
+//                 ;
+//             });
+//         }
+
+//        public function inputPasswordFiledIsEmpty()
+//    {
+//        $this->browse(function (Browser $browser){
+//            $browser->visit(new  login)
+//                    ->assertSee('Login')
+//                     ->type('@email','haneen.alkhalili-96@hotmail.com')
+//                    ->click('@button')
+//                    ->assertSee('You are logged in!')
+//
+//
+//            ;
+//    });
+//}
+
+//    public function invalidEmail()
+//    {
+//        $this->browse(function (Browser $browser){
+//            $browser->visit(new  login)
+//                    ->assertSee('Login')
+//                     ->type('@email','haneenn.alkhalili-96@hotmail.com')
+//                     ->type('@password','12345678')
+//                    ->click('@button')
+//                    ->assertSee('You are logged in!')
+//
+//
+//            ;
+//    });
+//}
 
 
-
-    public function successLogin()
+    public function invalidPassword()
     {
-        $user = (User::class);
-        $this->browse(function (Browser $browser)use($user){
-            $browser->visit('login')
-                    ->assertSee('Login')
-                    // ->type('email','demi@gmail.com')
-                    // ->type('password','12345678')
-                    ->loginAs(User::find(1))
-                    ->press('Login')
-                    ->assertSee('You are logged in!')
-                    ->assertPathIs('/view/students')
+
+        $this->browse(function (Browser $browser){
+            $browser->visit(new  login)
+                ->assertSee('Login')
+                ->type('@email','haneen.alkhalili-96@hotmail.com')
+                ->type('@password','1234')
+                ->click('@button')
+
 
 
             ;
-    });
-
-}
+        });
+    }
 
 }
