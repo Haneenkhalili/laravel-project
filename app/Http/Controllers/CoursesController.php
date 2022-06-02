@@ -20,15 +20,17 @@ class CoursesController extends Controller
 //     *
 ////     * @return \Illuminate\Http\Response
 //     */
-    public function index()
+    public function index(Request $request)
     {
-        //
-//        $data = Courses::all();
-//        return view('Courses')->with([
-//            'Courses'=>$data
-//        ]);
         $courses = Courses::all();
-        return view('courses/course', compact('courses'));
+        if($request->is('api/*')){
+            $jason= json_encode($courses);
+            return $jason;
+        }
+        else{
+            return view('courses/course', compact('courses'));
+
+        }
 
     }
 
@@ -40,7 +42,9 @@ class CoursesController extends Controller
 //     */
     public function create()
     {
+
         return view('courses.add-course');
+
 
     }
 
@@ -52,17 +56,31 @@ class CoursesController extends Controller
      */
     public function store(Request $request)
     {
-        foreach ($request->name as $key => $insert) {
+        if($request->is('api/*')){
             $saveRecord = [
-
-                'name' => $request->name[$key],
-                'prof_name' => $request-> prof_name[$key],
+                'name' => $request->name,
+                'prof_name' => $request-> prof_name,
 
             ];
             $courses = Courses::create($saveRecord);
+            return 'done';
+        }
+        else{
+
+            foreach ($request->name as $key => $insert) {
+                $saveRecord = [
+
+                    'name' => $request->name[$key],
+                    'prof_name' => $request-> prof_name[$key],
+
+                ];
+                $courses = Courses::create($saveRecord);
+
+            }
+            return redirect('/courses');
 
         }
-        return redirect('/courses');
+
 
     }
 

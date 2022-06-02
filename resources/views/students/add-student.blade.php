@@ -112,7 +112,9 @@
         // Select2 Multiple
         $('.select2-multiple').select2({
             placeholder: "Select",
-            allowClear: true
+            allowClear: true,
+            minimumInputLength: 2 // only start searching when the user has input 3 or more characters
+
         });
 
     });

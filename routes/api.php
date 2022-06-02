@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\HTTP\Controllers\CoursesController;
+use App\HTTP\Controllers\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+
+Route::post('/login', [App\Http\Controllers\LoginController::class,'login']);
+Route::middleware('auth:api')->get('/courses',[App\Http\Controllers\CoursesController::class,'index']);
+Route::middleware('auth:api')->post('/courses',[App\Http\Controllers\CoursesController::class,'store']);
+
+
+
