@@ -67,17 +67,19 @@ class StudentsController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'address'=>'required',
-            'password' => 'required|min:5'
-
+            'password' => 'required|min:5',
+            'course'=>'required'
         ], [
             'name.required' => 'Name is required',
-            'Password.required' => 'Password is required'
+            'Password.required' => 'Password is required',
+            'address' =>'Address is required',
+            'email'=> 'Email is required'
         ]);
 
         $validatedData['password'] = bcrypt($validatedData['password']);
         $student = Students::create($validatedData);
 
-        foreach ($request->tags as $t){
+        foreach ($request->course as $t){
             self::addStudentCourses($student->id,$t);
         }
 

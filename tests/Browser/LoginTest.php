@@ -3,6 +3,7 @@
 namespace Tests\Browser;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\Login;
 use Tests\DuskTestCase;
@@ -23,7 +24,6 @@ class LoginTest extends DuskTestCase
      */
 
 
-
 //    public function successLogin()
 //    {
 //        $this->browse(function (Browser $browser){
@@ -33,23 +33,29 @@ class LoginTest extends DuskTestCase
 //                     ->type('@password','12345678')
 //                    ->click('@button')
 //                    ->assertSee('You are logged in!')
-//
-//
-//            ;
+//                     ->pause(900)
+//                    ->assertAuthenticated();
 //    });
 //}
-//         public function inputEmailFiledIsEmpty(){
-//             $this->browse(function (Browser $browser){
-//                 $browser->visit(new  login)
+
+//      public function inputEmailFiledIsEmpty()
+//      {
+//
+//            $this->browse(function (Browser $browser){
+//              $browser->visit(new  login)
 //                     ->assertSee('Login')
+//                  ->assertInputMissing('@email')
 //                     ->type('@password','12345678')
 //                     ->click('@button')
-//                     ->assertSee('You are logged in!')
+//                  ->assertDialogOpened()
+//                      ->pause(900)
+//
 //
 //
 //                 ;
 //             });
 //         }
+
 
 //        public function inputPasswordFiledIsEmpty()
 //    {
@@ -58,8 +64,8 @@ class LoginTest extends DuskTestCase
 //                    ->assertSee('Login')
 //                     ->type('@email','haneen.alkhalili-96@hotmail.com')
 //                    ->click('@button')
-//                    ->assertSee('You are logged in!')
-//
+//                    ->assertSee('Please fill out this field.')
+//                    ->pause(1000)
 //
 //            ;
 //    });
@@ -73,28 +79,38 @@ class LoginTest extends DuskTestCase
 //                     ->type('@email','haneenn.alkhalili-96@hotmail.com')
 //                     ->type('@password','12345678')
 //                    ->click('@button')
-//                    ->assertSee('You are logged in!')
-//
-//
-//            ;
+//                    ->assertSee('These credentials do not match our records.')
+//                      ;
 //    });
 //}
 
+//    public function invalidPassword()
+//    {
+//
+//        $this->browse(function (Browser $browser){
+//            $browser->visit(new  login)
+//                ->assertSee('Login')
+//                ->type('@email','haneen.alkhalili-96@hotmail.com')
+//                ->type('@password','12345768')
+//                ->click('@button')
+//                ->pause(900)
+//                ->assertSee('These credentials do not match our records.');
+//
+//        });
+//    }
 
-    public function invalidPassword()
-    {
-
-        $this->browse(function (Browser $browser){
-            $browser->visit(new  login)
-                ->assertSee('Login')
-                ->type('@email','haneen.alkhalili-96@hotmail.com')
-                ->type('@password','1234')
-                ->click('@button')
 
 
-
-            ;
-        });
-    }
-
+//    public function invalidEmailAndPassword()
+//    {
+//        $this->browse(function (Browser $browser){
+//            $browser->visit(new  login)
+//                    ->assertSee('Login')
+//                     ->type('@email','haneenn.alkhalili-96@hotmail.com')
+//                     ->type('@password','12346578')
+//                    ->click('@button')
+//                    ->assertSee('These credentials do not match our records.')
+//                ->pause(900);
+//    });
+//}
 }

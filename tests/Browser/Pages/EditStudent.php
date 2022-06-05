@@ -2,17 +2,11 @@
 
 namespace Tests\Browser\Pages;
 
-use App\Models\User;
 use Laravel\Dusk\Browser;
 use Laravel\Dusk\Page;
 
-/**
- * @method browse(\Closure $param)
- */
-class Login extends Page
+class EditStudent extends Page
 {
-    protected $user;
-
     /**
      * Get the URL for the page.
      *
@@ -20,7 +14,7 @@ class Login extends Page
      */
     public function url()
     {
-        return '/login';
+        return '/';
     }
 
     /**
@@ -34,10 +28,6 @@ class Login extends Page
         $browser->assertPathIs($this->url());
     }
 
-
-
-
-
     /**
      * Get the element shortcuts for the page.
      *
@@ -46,12 +36,7 @@ class Login extends Page
     public function elements()
     {
         return [
-            '@email' => 'input[name=email]',
-            '@password'=>'input[name=password]',
-            '@button'=>'.btn-primary',
-
+            '@element' => '#selector',
         ];
     }
-
-
 }

@@ -81,7 +81,7 @@
                         </div>
                         <div class="form-group mb-3">
                             <label for="select2Multiple">Select Courses</label>
-                            <select class="select2-multiple form-control" name="tags[]" multiple="multiple"
+                            <select class="select2-multiple form-control" name="course[]" multiple="multiple"
                                     id="select2Multiple">
                                 <option value="">Please Select</option>
                                 @foreach($course as $c)
@@ -113,7 +113,7 @@
         $('.select2-multiple').select2({
             placeholder: "Select",
             allowClear: true,
-            minimumInputLength: 2 // only start searching when the user has input 3 or more characters
+            // minimumInputLength: 2 // only start searching when the user has input 3 or more characters
 
         });
 
