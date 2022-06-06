@@ -21,38 +21,39 @@ class AddStudentTest extends DuskTestCase
      */
 
 
-
-    /** @test */
+    /** @test
+     * @throws \Throwable
+     */
 //    public function bestCaseAddStudent()
 //    {
-//        $this->browse(function (Browser $browser) {
-//            $browser->visit(new  login)
-//                    ->assertSee('Login')
-//                     ->type('@email','haneen.alkhalili-96@hotmail.com')
-//                     ->type('@password','12345678')
-//                     ->click('@button')
-//                     ->assertSee('You are logged in!')
-//                     ->clickLink('Students')
-//                     ->assertSee('All Students')
-//                     ->clickLink('Add Student')
-//                ->on(new AddStudent)
-//                     ->assertSee('Add Student')
-//                     ->type('@name','ahmad')
-//                     ->type('@email','ahmad@gmail.com')
-//                     ->type('@address','irbid')
-//                     ->type('@password','12345678');
-//            $items = $browser->elements('select[name^="tags[]"]');
-//
-//            foreach ($items as $item) {
-//                $options = $item->findElements(WebDriverBy::cssSelector('option:not([disabled])'));
-//
-//                $options[array_rand($options)]->click();
-//            }
-//
-//            $browser->pause(900)
-//                ->click('@addButton');
-//
-//        });
+////        $this->browse(function (Browser $browser) {
+////            $browser->visit(new  login)
+////                    ->assertSee('Login')
+////                     ->type('@email','haneen.alkhalili-96@hotmail.com')
+////                     ->type('@password','12345678')
+////                     ->click('@button')
+////                     ->assertSee('You are logged in!')
+////                     ->clickLink('Students')
+////                     ->assertSee('All Students')
+////                     ->clickLink('Add Student')
+////                ->on(new AddStudent)
+////                     ->assertSee('Add Student')
+////                     ->type('@name','ahmad')
+////                     ->type('@email','ahmad@gmail.com')
+////                     ->type('@address','irbid')
+////                     ->type('@password','12345678');
+////            $items = $browser->elements('select[name^="tags[]"]');
+////
+////            foreach ($items as $item) {
+////                $options = $item->findElements(WebDriverBy::cssSelector('option:not([disabled])'));
+////
+////                $options[array_rand($options)]->click();
+////            }
+////
+////            $browser->pause(900)
+////                ->click('@addButton');
+////
+////        });
 //    }
 
 

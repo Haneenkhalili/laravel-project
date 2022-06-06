@@ -39,6 +39,15 @@
                     <form action="{{route('students.edit',$student->id) }}" method="POST">
                         @csrf
                         @method('PUT')
+                        @if ($errors->any())
+                            <div class="alert alert-danger" role="alert">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 
                         <div class="form-group mb-3">
                             <label for="">Student Name</label>
@@ -49,7 +58,7 @@
                             <input type="text" name="email" value="{{$student->email}}" class="form-control">
                         </div>
                         <div class="form-group mb-3">
-                            <label for="">Student Course</label>
+                            <label for="">Student Address</label>
                             <input type="text" name="address" value="{{$student->address}}" class="form-control">
                         </div>
 

@@ -59,7 +59,7 @@ class StudentsController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
@@ -123,15 +123,14 @@ class StudentsController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, $id)
     {
-
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'address'=>'required',
+            'address'=>'required|regex:/^[a-zA-Z]+$/u',
 
         ], [
             'name.required' => 'Name is required'
@@ -145,28 +144,18 @@ class StudentsController extends Controller
         return redirect('/students');
 
 
-//        Students::where('id',$id)->update($validatedData);
-
-//        return back()->with('success', 'User created successfully.');
-
-        // Students::where('id',$id)->update($request->all());
-
-        // return redirect('/student');
-
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function destroy($id)
     {
-
         Students::where('id',$id)->delete();
 
         return redirect('/students');
-
     }
 }

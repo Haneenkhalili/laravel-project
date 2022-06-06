@@ -14,7 +14,7 @@ class EditStudent extends Page
      */
     public function url()
     {
-        return '/';
+        return '/students/3';
     }
 
     /**
@@ -36,7 +36,11 @@ class EditStudent extends Page
     public function elements()
     {
         return [
-            '@element' => '#selector',
+            '@name' => 'input[name=name]',
+            '@email'=>'input[name=email]',
+            '@address'=>'input[name=address]',
+            '@updateButton'=>'.btn-primary'
+
         ];
     }
 }
