@@ -50,8 +50,8 @@
             </thead>
             <tbody>
             <tr>
-                <td ><input type="text" class="form-control" name=" name[0]" placeholder="Enter Course name" required></td>
-                <td ><input type="text" class="form-control" name="prof_name[0]" placeholder="Enter prof name" required></td>
+                <td ><input type="text" class="form-control" name="name" placeholder="Enter Course name" required></td>
+                <td ><input type="text" class="form-control" name="prof_name" placeholder="Enter prof name" required></td>
             </tr>
             </tbody>
         </table>

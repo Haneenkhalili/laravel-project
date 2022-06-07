@@ -67,16 +67,16 @@ class CoursesController extends Controller
         }
         else{
 
-            foreach ($request->name as $key => $insert) {
+
                 $saveRecord = [
 
-                    'name' => $request->name[$key],
-                    'prof_name' => $request-> prof_name[$key],
+                    'name' => $request->name,
+                    'prof_name' => $request-> prof_name,
 
                 ];
                 $courses = Courses::create($saveRecord);
 
-            }
+
             return redirect('/courses');
 
         }

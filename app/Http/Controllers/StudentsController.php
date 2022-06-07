@@ -65,7 +65,7 @@ class StudentsController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email|unique:students',
             'address'=>'required',
             'password' => 'required|min:5',
             'course'=>'required'
