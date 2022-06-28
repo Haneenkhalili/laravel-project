@@ -35,6 +35,9 @@ class projectTest extends DuskTestCase
 //            ;
 //        });
 //    }
+
+
+
 //     public function addTask(){
 //                 $this->browse(function (Browser $browser) {
 //            $browser->visit('/students')
@@ -58,9 +61,10 @@ class projectTest extends DuskTestCase
                  ->clickAtXPath('//*[@id="app"]/main/div/div/div/div/div[2]/table/tbody/tr[5]/td[8]/a')
                  ->pause(300)
                  ->clickAtXPath('//*[@id="app"]/main/div/div/div/div/div[2]/table/tbody/tr/td[3]/a')
-                 ->clickLink('Show tasks')
-                ->drag('#tablecontents > tr.row1.odd',' #tablecontents > tr:nth-child(3)')
-                 ->pause(4000)
+                 ->clickLink('Show t
+                 asks')
+                ->drag('#tablecontents > tr:nth-child(3)','#tablecontents > tr.row1.odd')
+                 ->pause(2000)
              ;
 
          });

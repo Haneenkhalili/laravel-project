@@ -34,9 +34,10 @@ class LoginTest extends DuskTestCase
 //                    ->click('@button')
 //                    ->assertSee('You are logged in!')
 //                     ->pause(900)
-//                    ->assertAuthenticated();
+//                    ->assertAuthenticated()
+//                    ;
 //    });
-//}
+// }
 
 
 //      public function inputEmailFiledIsEmpty()

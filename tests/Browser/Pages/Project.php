@@ -36,8 +36,6 @@ class Project extends Page
     public function elements()
     {
         return [
-//            '@drag' => '//*[@id="tablecontents"]/tr[1]/td[1]/div',
-//            '@drop'=>'//*[@id="tablecontents"]/tr[2]/td[1]/div'
         ];
     }
 }
