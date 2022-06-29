@@ -14,7 +14,7 @@ class DemoRequestTest extends DuskTestCase
      * @return void
      */
     /**@test**/
-    public function check_the_first_name_accept_text_and_number_and_symbol()
+    public function checkTheFirstNameAcceptTextAndNumberAndSymbol()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -22,7 +22,7 @@ class DemoRequestTest extends DuskTestCase
         });
     }
 
-    public function check_the_last_name_accept_text_and_number_and_symbol()
+    public function checkTheLastNameAcceptTextAndNumberAndSymbol()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -30,7 +30,7 @@ class DemoRequestTest extends DuskTestCase
         });
     }
 
-    public function check_the_organization_name_accept_text_and_number_and_symbol()
+    public function checkTheOrganizationNameAcceptTextAndNumberAndSymbol()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -38,7 +38,7 @@ class DemoRequestTest extends DuskTestCase
         });
     }
 
-    public function check_the_job_title_accept_text()
+    public function checkTheJobTitleAcceptText()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -46,7 +46,7 @@ class DemoRequestTest extends DuskTestCase
         });
     }
 
-    public function check_the_job_title_not_accept_number_and_symbol()
+    public function checkTheJobTitleNotAcceptNumberAndSymbol()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -54,7 +54,7 @@ class DemoRequestTest extends DuskTestCase
         });
     }
 
-    public function check_the_phone_number_not_accept_text_and_symbol()
+    public function checkThePhoneNumberNotAcceptTextAndSymbol()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -62,7 +62,7 @@ class DemoRequestTest extends DuskTestCase
         });
     }
 
-    public function check_phone_number_not_accept_more_than_10_digit()
+    public function checkPhoneNumberNotAcceptMoreThan10Digit()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -70,29 +70,21 @@ class DemoRequestTest extends DuskTestCase
         });
     }
 
-    public function check_the_company_name_accept_text_and_number()
+    public function checkTheCompanyNameAcceptTextAndNumber()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
                 ->assertSee('Laravel');
         });
     }
-    public function check_the_company_name_not_accept_symbol()
+    public function checkTheCompanyNameNotAcceptSymbol()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
                 ->assertSee('Laravel');
         });
     }
-    public function verify_the_international_dropdown_list()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                ->assertSee('Laravel');
-        });
-    }
-
-    public function check_email_validation()
+    public function verifyTheInternationalDropdownList()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -100,7 +92,7 @@ class DemoRequestTest extends DuskTestCase
         });
     }
 
-    public function check_request_a_demo_button_clickable()
+    public function checkEmailValidation()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -108,7 +100,15 @@ class DemoRequestTest extends DuskTestCase
         });
     }
 
-    public function check_a_confirmation_message_show()
+    public function checkRequestDemoButtonClickable()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+
+    public function checkConfirmationMessageShow()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')

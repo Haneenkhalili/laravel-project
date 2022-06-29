@@ -6,15 +6,14 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class HavingProblemTest extends DuskTestCase
+class AnalystCornerTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
      *
      * @return void
      */
-    /**@test**/
-    public function checkEnterValidEmail()
+    public function checkAddRequestHistory()//table
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -22,7 +21,7 @@ class HavingProblemTest extends DuskTestCase
         });
     }
 
-    public function checkEnterInvalidEmail()
+    public function checkAddRequestAnalystAsDashboard()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -30,7 +29,8 @@ class HavingProblemTest extends DuskTestCase
         });
     }
 
-    public function checkHavingTechnicalIssueRadioButtonIfClickable()
+
+    public function checkAddStatistics()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -38,7 +38,7 @@ class HavingProblemTest extends DuskTestCase
         });
     }
 
-    public function checkForgetPasswordRadioButtonIfClickable()
+    public function checkTheRequestServiceOpenNewTable()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -46,7 +46,7 @@ class HavingProblemTest extends DuskTestCase
         });
     }
 
-    public function dontCheckAnyRadioButtonAndClickSubmit() //warning message should appear
+    public function checkRequestServiceContainAllAttributeAsPerRequirement()//serviceType//issuePriority//description//uplodeFile
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -54,7 +54,32 @@ class HavingProblemTest extends DuskTestCase
         });
     }
 
-    public function submitButtonClickableAndShowConfirmationMessage()
+
+    public function checkAddServiceTypeAsAdroplist()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+
+
+    public function checkAddDescriptionAsInputText()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+
+    public function checkAddUploadFile()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+    public function checkAddSubmitButton()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
