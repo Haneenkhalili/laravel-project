@@ -219,7 +219,7 @@ class HomePageTest extends DuskTestCase
     }
 
 
-    public function check_add_global_events_and_is_clickable()
+    public function checkAddGlobalEventsAndIsClickable()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -228,7 +228,7 @@ class HomePageTest extends DuskTestCase
     }
 
 
-    public function check_add_economics_and_is_clickable()
+    public function checkAddEconomicsAndIsClickable()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -237,7 +237,7 @@ class HomePageTest extends DuskTestCase
     }
 ///////////////////////////////////////////////////////////////
 
-    public function check_add_home_to_navbar_and_is_clickable()
+    public function checkAddHomeToNavbarAndIsClickable()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -245,7 +245,7 @@ class HomePageTest extends DuskTestCase
         });
     }
 
-    public function check_add_companies_to_navbar_and_is_clickable()
+    public function checkAddCompaniesToNavbarAndIsClickable()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -253,22 +253,14 @@ class HomePageTest extends DuskTestCase
         });
     }
 
-    public function check_add_drugs_to_navbar_and_is_clickable()
+    public function checkAddDrugsToNavbarAndIsClickable()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
                 ->assertSee('Laravel');
         });
     }
-    public function check_add_therapy_area_to_navbar_and_is_clickable()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                ->assertSee('Laravel');
-        });
-    }
-
-    public function check_add_patents_to_navbar_and_is_clickable()
+    public function checkAddTherapyAreaToNavbarAndIsClickable()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -276,7 +268,7 @@ class HomePageTest extends DuskTestCase
         });
     }
 
-    public function check_add_countries_to_navbar_and_is_clickable()
+    public function checkAddPatentsToNavbarAndIsClickable()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -284,7 +276,7 @@ class HomePageTest extends DuskTestCase
         });
     }
 
-    public function check_add_events_to_navbar_and_is_clickable()
+    public function checkAddCountriesToNavbarAndIsClickable()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -292,7 +284,7 @@ class HomePageTest extends DuskTestCase
         });
     }
 
-    public function check_add_agent_to_navbar_and_is_clickable()
+    public function checkAddEventsToNavbarAndIsClickable()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -300,7 +292,7 @@ class HomePageTest extends DuskTestCase
         });
     }
 
-    public function check_add_wishlist_to_navbar_and_is_clickable()
+    public function checkAddAgentToNavbarAndIsClickable()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -308,7 +300,7 @@ class HomePageTest extends DuskTestCase
         });
     }
 
-    public function check_dd_my_portfolio_to_navbar_and_is_clickable()
+    public function checkAddWishlistToNavbarAndIsClickable()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -316,7 +308,15 @@ class HomePageTest extends DuskTestCase
         });
     }
 
-    public function check_add_analyst_corner_to_navbar_and_is_clickable()
+    public function checkAddMyPortfolioToNavbarAndIsClickable()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+
+    public function checkAddAnalystCornerToNavbarAndIsClickable()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')

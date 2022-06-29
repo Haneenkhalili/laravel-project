@@ -14,7 +14,7 @@ class PolicesPageTest extends DuskTestCase
      * @return void
      */
      /**@test**/
-    public function check_the_term_and_privacy_are_exist()
+    public function checkTheTermAndPrivacyAreExist()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -22,7 +22,7 @@ class PolicesPageTest extends DuskTestCase
         });
     }
 
-    public function check_the_accept_button_and_redirect_to_user_profile()
+    public function checkTheAcceptButtonAndRedirectToUserProfile()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')

@@ -14,7 +14,7 @@ class LoginPageTest extends DuskTestCase
      * @return void
      */
     /**@test**/
-    public function login_with_valid_email_and_valid_password()
+    public function loginWithValidEmailAndValidPassword()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -22,7 +22,7 @@ class LoginPageTest extends DuskTestCase
         });
     }
 
-    public function login_with_valid_email_and_invalid_password()
+    public function loginWithValidEmailAndInvalidPassword()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -30,7 +30,7 @@ class LoginPageTest extends DuskTestCase
         });
     }
 
-    public function login_with_invalid_email_and_valid_password()
+    public function loginWithInvalidEmailAndValidPassword()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -38,7 +38,7 @@ class LoginPageTest extends DuskTestCase
         });
     }
 
-    public function login_with_invalid_email_and_invalid_password()
+    public function loginWithInvalidEmailAndInvalidPassword()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -46,14 +46,14 @@ class LoginPageTest extends DuskTestCase
         });
     }
 
-    public function login_when_the_field_is_blank()
+    public function loginWhenTheFieldIsBlank()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
                 ->assertSee('Please Fill The Field');
         });
     }
-    public function verify_the_having_technical_issue_functionality()
+    public function verifyTheHavingTechnicalIssueFunctionality()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -61,7 +61,7 @@ class LoginPageTest extends DuskTestCase
         });
     }
 
-    public function verify_the_remember_me_functionality()
+    public function verifyTheRememberMeFunctionality()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -70,7 +70,7 @@ class LoginPageTest extends DuskTestCase
     }
 
 
-    public function login_with_new_password_only_after_the_user_changed_the_password()
+    public function loginWithNewPasswordOnlyAfterTheUserChangedThePassword()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -78,7 +78,7 @@ class LoginPageTest extends DuskTestCase
         });
     }
 
-    public function login_page_allows_to_login_in_the_same_time_with_different_credentials_in_different_browser()
+    public function loginPageAllowsToLoginInTheSameTimeWithDifferentCredentialsInDifferentBrowser()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -86,7 +86,7 @@ class LoginPageTest extends DuskTestCase
         });
     }
 
-    public function verify_if_the_enter_key_of_the_keyboard_is_working_correctly_on_login_page()
+    public function verifyIfTheEnterKeyOfTheKeyboardIsWorkingCorrectlyOnLoginPage()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -94,22 +94,14 @@ class LoginPageTest extends DuskTestCase
         });
     }
 
-    public function verify_the_login_page_and_all_its_controls_in_different_browser()
+    public function verifyTheLoginPageAndAllItsControlsInDifferentBrowser()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
                 ->assertSee('You have login successfully');
         });
     }
-    public function enter_the_character_more_than_the_specified_range_in_each_field()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                ->assertSee('You have login successfully');
-        });
-    }
-
-    public function verify_the_timeout_functionality_of_the_login_session()
+    public function enterTheCharacterMoreThanTheSpecifiedRangeInEachField()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -117,7 +109,7 @@ class LoginPageTest extends DuskTestCase
         });
     }
 
-    public function login_with_the_same_credentials_in_different_browser_at_the_same_time()
+    public function verifyTheTimeoutFunctionalityOfTheLoginSession()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -125,7 +117,7 @@ class LoginPageTest extends DuskTestCase
         });
     }
 
-    public function check_the_request_demo_button()
+    public function loginWithTheSameCredentialsInDifferentBrowserAtTheSameTime()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -133,7 +125,7 @@ class LoginPageTest extends DuskTestCase
         });
     }
 
-    public function check_email_validation()
+    public function checkTheRequestDemoButton()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -141,7 +133,15 @@ class LoginPageTest extends DuskTestCase
         });
     }
 
-    public function check_the_correct_login_redirect_to_expected_page()   //for new user
+    public function checkEmailValidation()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('You have login successfully');
+        });
+    }
+
+    public function checkTheCorrectLoginRedirectToExpectedPage()   //for new user
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
