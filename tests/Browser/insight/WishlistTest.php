@@ -1,21 +1,18 @@
 <?php
 
-namespace Tests\Browser;
+namespace Tests\Browser\insight;
 
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class ProfileManagementTest extends DuskTestCase
+class WishlistTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
      *
      * @return void
-     * @throws \Throwable
      */
-    /**@test**/
-    public function check_the_user_able_to_update_profile_with_valid_information()
+    public function checkRedirectToExpectedPage()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -23,10 +20,55 @@ class ProfileManagementTest extends DuskTestCase
         });
     }
 
-    /**
-     * @throws \Throwable
-     */
-    public function check_the_email_validation()
+    public function checkAddTable()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+
+    public function checkAdd4tabs()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+
+    public function checkAddDeleteIcon()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+
+    public function checkTheDeleteButtonIsClickable()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+
+    public function checkTheRecordOfReportShouldBeDeletedFromTheDatabase()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+
+    public function checkIsTheDeleteButtonHasTrashIconAsPerTheRequirementDocument()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+
+    public function checkDisplayConfirmationMessageAfterDelete()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -35,10 +77,7 @@ class ProfileManagementTest extends DuskTestCase
     }
 
 
-    /**
-     * @throws \Throwable
-     */
-    public function check_the_password_validation()
+    public function checkAddUpdateIcon()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -46,11 +85,7 @@ class ProfileManagementTest extends DuskTestCase
         });
     }
 
-
-    /**
-     * @throws \Throwable
-     */
-    public function check_the_first_name_validation()
+    public function checkTheUpdateIconOpenNewTab()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -58,10 +93,7 @@ class ProfileManagementTest extends DuskTestCase
         });
     }
 
-    /**
-     * @throws \Throwable
-     */
-    public function check_the_last_name_validation()
+    public function checkTheConfirmationMessageDisplayAfterUpdate()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -69,10 +101,7 @@ class ProfileManagementTest extends DuskTestCase
         });
     }
 
-    /**
-     * @throws \Throwable
-     */
-    public function check_the_number_validation()
+    public function checkAddAddProduct()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -80,10 +109,7 @@ class ProfileManagementTest extends DuskTestCase
         });
     }
 
-    /**
-     * @throws \Throwable
-     */
-    public function check_the_profile_picture_validation()
+    public function checkTheAddProductButtonOpenAddTab()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -91,10 +117,7 @@ class ProfileManagementTest extends DuskTestCase
         });
     }
 
-    /**
-     * @throws \Throwable
-     */
-    public function check_the_linkedin_accept_only_link()
+    public function checkTheAddProductFormContainAllField()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -102,77 +125,7 @@ class ProfileManagementTest extends DuskTestCase
         });
     }
 
-    /**
-     * @throws \Throwable
-     */
-    public function check_the_job_title_validation()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                ->assertSee('Laravel');
-        });
-    }
-
-
-    /**
-     * @throws \Throwable
-     */
-    public function check_the_linkedin_redirect_to_the_linkedin_profile()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                ->assertSee('Laravel');
-        });
-    }
-
-
-    /**
-     * @throws \Throwable
-     */
-    public function check_the_function_dropdown_list()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                ->assertSee('Laravel');
-        });
-    }
-
-    /**
-     * @throws \Throwable
-     */
-    public function check_the_preferred_communication_checkboxes_clickable()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                ->assertSee('Laravel');
-        });
-    }
-
-    /**
-     * @throws \Throwable
-     */
-    public function check_the_preferred_communication_checkboxes_can_choose_multiple_choice()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                ->assertSee('Laravel');
-        });
-    }
-
-
-    /**
-     * @throws \Throwable
-     */
-    public function check_the_notify_me_dropdown_list()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                ->assertSee('Laravel');
-        });
-    }
-
-
-    public function check_the_save_button_if_clickable_and_save_changed_in_the_database()
+    public function checkTheTypeInTheTableAddAsHyperlinkAndRedirectToTheProductProfile()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')

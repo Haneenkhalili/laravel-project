@@ -1,12 +1,17 @@
 <?php
 
-namespace Tests\Browser\Pages;
+namespace Tests\Browser\Browser\Pages;
 
 use Laravel\Dusk\Browser;
 use Laravel\Dusk\Page;
 
-class Course extends Page
+/**
+ * @method browse(\Closure $param)
+ */
+class Login extends Page
 {
+    protected $user;
+
     /**
      * Get the URL for the page.
      *
@@ -14,7 +19,7 @@ class Course extends Page
      */
     public function url()
     {
-        return '/courses/add-course';
+        return '/login';
     }
 
     /**
@@ -28,6 +33,10 @@ class Course extends Page
         $browser->assertPathIs($this->url());
     }
 
+
+
+
+
     /**
      * Get the element shortcuts for the page.
      *
@@ -36,9 +45,12 @@ class Course extends Page
     public function elements()
     {
         return [
-            '@name' => 'input[name=name]',
-            '@prof'=>'input[name=prof_name]',
-             '@button'=>'.btn-success'
+            '@email' => 'input[name=email]',
+            '@password'=>'input[name=password]',
+            '@button'=>'.btn-primary',
+
         ];
     }
+
+
 }

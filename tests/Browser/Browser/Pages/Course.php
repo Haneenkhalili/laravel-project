@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Browser\Pages;
+namespace Tests\Browser\Browser\Pages;
 
 use Laravel\Dusk\Browser;
 use Laravel\Dusk\Page;
 
-class Register extends Page
+class Course extends Page
 {
     /**
      * Get the URL for the page.
@@ -14,7 +14,7 @@ class Register extends Page
      */
     public function url()
     {
-        return '/register';
+        return '/courses/add-course';
     }
 
     /**
@@ -37,10 +37,8 @@ class Register extends Page
     {
         return [
             '@name' => 'input[name=name]',
-            '@email' => 'input[name=email]',
-            '@password' => 'input[name=password]',
-            '@confirm' => 'input[name=password_confirmation]',
-            '@button'=>'.btn-primary'
+            '@prof'=>'input[name=prof_name]',
+             '@button'=>'.btn-success'
         ];
     }
 }

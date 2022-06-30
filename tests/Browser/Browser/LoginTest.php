@@ -1,15 +1,8 @@
 <?php
 
-namespace Tests\Browser;
+namespace Tests\Browser\Browser;
 
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Support\Facades\Hash;
-use Laravel\Dusk\Browser;
-use Tests\Browser\Pages\Login;
 use Tests\DuskTestCase;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use App\Models\User;
-use Laravel\Dusk\Page;
 
 
 class LoginTest extends DuskTestCase

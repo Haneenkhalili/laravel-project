@@ -1,12 +1,8 @@
 <?php
 
-namespace Tests\Browser;
+namespace Tests\Browser\Browser;
 
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\WithFaker;
-use Laravel\Dusk\Browser;
-use Tests\Browser\Pages\Course;
-use Tests\Browser\Pages\Login;
 use Tests\DuskTestCase;
 
 class courseTest extends DuskTestCase

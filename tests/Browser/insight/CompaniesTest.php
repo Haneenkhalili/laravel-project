@@ -1,19 +1,18 @@
 <?php
 
-namespace Tests\Browser;
+namespace Tests\Browser\insight;
 
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class AnalystCornerTest extends DuskTestCase
+class CompaniesTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
      *
      * @return void
      */
-    public function checkAddRequestHistory()//table
+    public function checkAddLatestNews()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -21,7 +20,7 @@ class AnalystCornerTest extends DuskTestCase
         });
     }
 
-    public function checkAddRequestAnalystAsDashboard()
+    public function checkTheDateOfLatestNews()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -29,8 +28,7 @@ class AnalystCornerTest extends DuskTestCase
         });
     }
 
-
-    public function checkAddStatistics()
+    public function checkAddTop10CountriesInMena()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -38,7 +36,7 @@ class AnalystCornerTest extends DuskTestCase
         });
     }
 
-    public function checkTheRequestServiceOpenNewTable()
+    public function checkTheSinceYourLastLoginAddedAsDashboard()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -46,7 +44,7 @@ class AnalystCornerTest extends DuskTestCase
         });
     }
 
-    public function checkRequestServiceContainAllAttributeAsPerRequirement()//serviceType//issuePriority//description//uplodeFile
+    public function checkTheSinceYourLastLoginFunctionalityIsCorner()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -54,8 +52,7 @@ class AnalystCornerTest extends DuskTestCase
         });
     }
 
-
-    public function checkAddServiceTypeAsAdroplist()
+    public function checkAddSearchFunction()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -63,8 +60,7 @@ class AnalystCornerTest extends DuskTestCase
         });
     }
 
-
-    public function checkAddDescriptionAsInputText()
+    public function checkSearchCompanyNameRedirectToTheExpectedPage()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -72,19 +68,53 @@ class AnalystCornerTest extends DuskTestCase
         });
     }
 
-    public function checkAddUploadFile()
+    public function checkAddAdvancedSearch()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
                 ->assertSee('Laravel');
         });
     }
-    public function checkAddSubmitButton()
+
+    public function checkTheAdvancedSearchShouldBeRedirectToExpectedPage()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
                 ->assertSee('Laravel');
         });
     }
+
+    public function checkAddAllAttributeAsPerRequirement()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+
+    public function checkAddShowResultButton()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+
+    public function checkTheShowResultButtonRedirectToExpectedPage()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+
+    public function checkTheResultPageContainAllAttributePerRequirement()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+
 
 }

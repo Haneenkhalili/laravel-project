@@ -1,15 +1,8 @@
 <?php
 
-namespace Tests\Browser;
+namespace Tests\Browser\Browser;
 
-use Facebook\WebDriver\WebDriverBy;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
-use Tests\Browser\Pages\AddStudent;
-use Tests\Browser\Pages\Login;
-use App\Models\User;
-
 
 
 class AddStudentTest extends DuskTestCase

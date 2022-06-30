@@ -1,13 +1,9 @@
 <?php
 
-namespace Tests\Browser;
+namespace Tests\Browser\insight;
 
-use http\Env\Request;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Laravel\Dusk\Browser;
-use Tests\Browser\Pages\Register;
-use Tests\DuskTestCase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Tests\DuskTestCase;
 
 class registrationTest extends DuskTestCase
 {

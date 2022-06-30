@@ -1,20 +1,18 @@
 <?php
 
-namespace Tests\Browser;
+namespace Tests\Browser\insight;
 
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class HavingProblemTest extends DuskTestCase
+class MyPortfolioTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
      *
      * @return void
      */
-    /**@test**/
-    public function checkEnterValidEmail()
+    public function checkTheMyPortfolioRedirectToExpectedPage()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -22,7 +20,14 @@ class HavingProblemTest extends DuskTestCase
         });
     }
 
-    public function checkEnterInvalidEmail()
+    public function checkAddAnalyticsAsDashboard()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+    public function checkAddRiskAlertAsDynamicNumber()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -30,7 +35,8 @@ class HavingProblemTest extends DuskTestCase
         });
     }
 
-    public function checkHavingTechnicalIssueRadioButtonIfClickable()
+
+    public function checkTheColumnNameOfTable()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -38,7 +44,7 @@ class HavingProblemTest extends DuskTestCase
         });
     }
 
-    public function checkForgetPasswordRadioButtonIfClickable()
+    public function checkAddTheBrandsHyperlinkAndRedirectToAnotherPage()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -46,20 +52,7 @@ class HavingProblemTest extends DuskTestCase
         });
     }
 
-    public function dontCheckAnyRadioButtonAndClickSubmit() //warning message should appear
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                ->assertSee('Laravel');
-        });
-    }
 
-    public function submitButtonClickableAndShowConfirmationMessage()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                ->assertSee('Laravel');
-        });
-    }
+
 
 }

@@ -1,19 +1,20 @@
 <?php
 
-namespace Tests\Browser;
+namespace Tests\Browser\insight;
 
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class CompaniesTest extends DuskTestCase
+class ProfileManagementTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
      *
      * @return void
+     * @throws \Throwable
      */
-    public function checkAddLatestNews()
+    /**@test**/
+    public function check_the_user_able_to_update_profile_with_valid_information()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -21,7 +22,10 @@ class CompaniesTest extends DuskTestCase
         });
     }
 
-    public function checkTheDateOfLatestNews()
+    /**
+     * @throws \Throwable
+     */
+    public function check_the_email_validation()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -29,7 +33,11 @@ class CompaniesTest extends DuskTestCase
         });
     }
 
-    public function checkAddTop10CountriesInMena()
+
+    /**
+     * @throws \Throwable
+     */
+    public function check_the_password_validation()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -37,7 +45,11 @@ class CompaniesTest extends DuskTestCase
         });
     }
 
-    public function checkTheSinceYourLastLoginAddedAsDashboard()
+
+    /**
+     * @throws \Throwable
+     */
+    public function check_the_first_name_validation()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -45,7 +57,10 @@ class CompaniesTest extends DuskTestCase
         });
     }
 
-    public function checkTheSinceYourLastLoginFunctionalityIsCorner()
+    /**
+     * @throws \Throwable
+     */
+    public function check_the_last_name_validation()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -53,7 +68,10 @@ class CompaniesTest extends DuskTestCase
         });
     }
 
-    public function checkAddSearchFunction()
+    /**
+     * @throws \Throwable
+     */
+    public function check_the_number_validation()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -61,7 +79,10 @@ class CompaniesTest extends DuskTestCase
         });
     }
 
-    public function checkSearchCompanyNameRedirectToTheExpectedPage()
+    /**
+     * @throws \Throwable
+     */
+    public function check_the_profile_picture_validation()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -69,7 +90,10 @@ class CompaniesTest extends DuskTestCase
         });
     }
 
-    public function checkAddAdvancedSearch()
+    /**
+     * @throws \Throwable
+     */
+    public function check_the_linkedin_accept_only_link()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -77,7 +101,10 @@ class CompaniesTest extends DuskTestCase
         });
     }
 
-    public function checkTheAdvancedSearchShouldBeRedirectToExpectedPage()
+    /**
+     * @throws \Throwable
+     */
+    public function check_the_job_title_validation()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -85,7 +112,11 @@ class CompaniesTest extends DuskTestCase
         });
     }
 
-    public function checkAddAllAttributeAsPerRequirement()
+
+    /**
+     * @throws \Throwable
+     */
+    public function check_the_linkedin_redirect_to_the_linkedin_profile()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -93,7 +124,11 @@ class CompaniesTest extends DuskTestCase
         });
     }
 
-    public function checkAddShowResultButton()
+
+    /**
+     * @throws \Throwable
+     */
+    public function check_the_function_dropdown_list()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -101,7 +136,10 @@ class CompaniesTest extends DuskTestCase
         });
     }
 
-    public function checkTheShowResultButtonRedirectToExpectedPage()
+    /**
+     * @throws \Throwable
+     */
+    public function check_the_preferred_communication_checkboxes_clickable()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -109,13 +147,38 @@ class CompaniesTest extends DuskTestCase
         });
     }
 
-    public function checkTheResultPageContainAllAttributePerRequirement()
+    /**
+     * @throws \Throwable
+     */
+    public function check_the_preferred_communication_checkboxes_can_choose_multiple_choice()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
                 ->assertSee('Laravel');
         });
     }
+
+
+    /**
+     * @throws \Throwable
+     */
+    public function check_the_notify_me_dropdown_list()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+
+
+    public function check_the_save_button_if_clickable_and_save_changed_in_the_database()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+
 
 
 }

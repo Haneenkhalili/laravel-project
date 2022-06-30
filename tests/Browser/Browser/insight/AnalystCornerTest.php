@@ -1,19 +1,18 @@
 <?php
 
-namespace Tests\Browser;
+namespace Tests\Browser\Browser\insight;
 
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class WishlistTest extends DuskTestCase
+class AnalystCornerTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
      *
      * @return void
      */
-    public function checkRedirectToExpectedPage()
+    public function checkAddRequestHistory()//table
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -21,55 +20,7 @@ class WishlistTest extends DuskTestCase
         });
     }
 
-    public function checkAddTable()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                ->assertSee('Laravel');
-        });
-    }
-
-    public function checkAdd4tabs()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                ->assertSee('Laravel');
-        });
-    }
-
-    public function checkAddDeleteIcon()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                ->assertSee('Laravel');
-        });
-    }
-
-    public function checkTheDeleteButtonIsClickable()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                ->assertSee('Laravel');
-        });
-    }
-
-    public function checkTheRecordOfReportShouldBeDeletedFromTheDatabase()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                ->assertSee('Laravel');
-        });
-    }
-
-    public function checkIsTheDeleteButtonHasTrashIconAsPerTheRequirementDocument()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                ->assertSee('Laravel');
-        });
-    }
-
-    public function checkDisplayConfirmationMessageAfterDelete()
+    public function checkAddRequestAnalystAsDashboard()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -78,7 +29,7 @@ class WishlistTest extends DuskTestCase
     }
 
 
-    public function checkAddUpdateIcon()
+    public function checkAddStatistics()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -86,7 +37,7 @@ class WishlistTest extends DuskTestCase
         });
     }
 
-    public function checkTheUpdateIconOpenNewTab()
+    public function checkTheRequestServiceOpenNewTable()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -94,7 +45,7 @@ class WishlistTest extends DuskTestCase
         });
     }
 
-    public function checkTheConfirmationMessageDisplayAfterUpdate()
+    public function checkRequestServiceContainAllAttributeAsPerRequirement()//serviceType//issuePriority//description//uplodeFile
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -102,7 +53,8 @@ class WishlistTest extends DuskTestCase
         });
     }
 
-    public function checkAddAddProduct()
+
+    public function checkAddServiceTypeAsAdroplist()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -110,5 +62,28 @@ class WishlistTest extends DuskTestCase
         });
     }
 
+
+    public function checkAddDescriptionAsInputText()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+
+    public function checkAddUploadFile()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
+    public function checkAddSubmitButton()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('Laravel');
+        });
+    }
 
 }

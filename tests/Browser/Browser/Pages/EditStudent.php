@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Browser\Pages;
+namespace Tests\Browser\Browser\Pages;
 
 use Laravel\Dusk\Browser;
 use Laravel\Dusk\Page;
 
-class AddStudent extends Page
+class EditStudent extends Page
 {
     /**
      * Get the URL for the page.
@@ -14,7 +14,7 @@ class AddStudent extends Page
      */
     public function url()
     {
-        return '/students/add-student';
+        return '/students/3';
     }
 
     /**
@@ -39,11 +39,8 @@ class AddStudent extends Page
             '@name' => 'input[name=name]',
             '@email'=>'input[name=email]',
             '@address'=>'input[name=address]',
-            '@password'=>'input[name=password]',
-            '@courses'=>'//*[@id="app"]/main/div/div/div/div/div[2]/form/div[6]/span/span[1]/span/span/textarea',
-            '@select'=>'//*[@id="select2Multiple"]',
-            '@addButton'=>'.btn-primary',
-            '@backButton'=>'.btn-warning'
+            '@updateButton'=>'.btn-primary'
+
         ];
     }
 }

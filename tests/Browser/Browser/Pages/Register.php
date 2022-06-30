@@ -1,10 +1,11 @@
 <?php
 
-namespace Tests\Browser\Pages;
+namespace Tests\Browser\Browser\Pages;
 
 use Laravel\Dusk\Browser;
+use Laravel\Dusk\Page;
 
-class HomePage extends Page
+class Register extends Page
 {
     /**
      * Get the URL for the page.
@@ -13,18 +14,18 @@ class HomePage extends Page
      */
     public function url()
     {
-        return '/';
+        return '/register';
     }
 
     /**
      * Assert that the browser is on the page.
      *
-     * @param  \Laravel\Dusk\Browser  $browser
+     * @param  Browser  $browser
      * @return void
      */
     public function assert(Browser $browser)
     {
-        //
+        $browser->assertPathIs($this->url());
     }
 
     /**
@@ -35,7 +36,11 @@ class HomePage extends Page
     public function elements()
     {
         return [
-            '@element' => '#selector',
+            '@name' => 'input[name=name]',
+            '@email' => 'input[name=email]',
+            '@password' => 'input[name=password]',
+            '@confirm' => 'input[name=password_confirmation]',
+            '@button'=>'.btn-primary'
         ];
     }
 }
